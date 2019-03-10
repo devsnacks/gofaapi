@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "416d7e8d-784a-42d8-ace1-2e38d41d23aa",
+		"name": "FA-Reseller-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n        <login>\n            <username>{{faapi_username}}</username>\n            <password>{{faapi_password}}</password>\n        </login>\n    </Body>\n</Envelope>"
+				},
+				"url": {
+					"raw": "{{domain}}/{{endpoint}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{endpoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProductgroups",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "text/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n        <getProductGroupIds> </getProductGroupIds>\n    </Body>\n</Envelope>"
+				},
+				"url": {
+					"raw": "{{domain}}/{{endpoint}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"{{endpoint}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
