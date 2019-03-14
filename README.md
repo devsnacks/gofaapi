@@ -25,7 +25,7 @@ func main() {
 
     client := gofaapi.NewClient(opt)
 
-    client.GetProductGroupIds()
+    client.GetProductGroups()
 })
 ```
 
