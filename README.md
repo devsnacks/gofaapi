@@ -1,5 +1,4 @@
-[![CircleCI](https://circleci.com/gh/devsnacks/gofaapi.svg?style=svg)](https://circleci.com/gh/devsnacks/gofaapi)
-
+[![CircleCI](https://circleci.com/gh/devsnacks/gofaapi.svg?style=shield)](https://circleci.com/gh/devsnacks/gofaapi) [![Go Report Card](https://goreportcard.com/badge/github.com/devsnacks/gofaapi)](https://goreportcard.com/report/github.com/devsnacks/gofaapi)
 # gofaapi
 
 FLYERALARM Reseller API library for golang
