@@ -12,6 +12,8 @@ import (
 // Envelope envelope
 type envelope struct {
 	XMLName xml.Name `xml:"http://schemas.xmlsoap.org/soap/envelope/ Envelope"`
+	XMLNS   string   `xml:"xmlns:xsi,attr"`
+	XMLNS2  string   `xml:"xmlns:ns2,attr"`
 	Body    body
 }
 
@@ -56,6 +58,8 @@ func NewClient(opt *ClientOptions) *Client {
 func (c *Client) call(soapAction string, request interface{}) (response []byte, err error) {
 
 	envelope := envelope{
+		XMLNS:  "http://www.w3.org/2001/XMLSchema-instance",
+		XMLNS2: "http://xml.apache.org/xml-soap",
 		Body: body{
 			Content: request,
 		},

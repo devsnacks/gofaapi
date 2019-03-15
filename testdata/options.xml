@@ -1,4 +1,4 @@
-<Options xsi:type="ns2:Map">
+<options xsi:type="ns2:Map">
    <item>
       <key>100</key>
       <value>1</value>
@@ -11,4 +11,4 @@
       <key>430</key>
       <value>123</value>
    </item>
-</Options>
+</options>

@@ -108,6 +108,11 @@ func MarshalAddress(e *xml.Encoder, address Address) {
 
 func (m Options) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 
+	if len(m) == 0 {
+		return nil
+	}
+
+	start.Name = xml.Name{Space: "", Local: "options"}
 	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "xsi:type"}, Value: "ns2:Map"}}
 	e.EncodeToken(start)
 

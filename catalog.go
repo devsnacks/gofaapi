@@ -9,17 +9,17 @@ type Order struct {
 	Username        string   `xml:"username"`
 	Password        string   `xml:"password"`
 	QuantityID      int      `xml:"quantityId"`
-	ShippingTypeID  int      `xml:"shippingTpyeId"`
+	ShippingTypeID  int      `xml:"shippingTypeId"`
 	Options         Options
 	AddressList     AddressList
 	ShippingID      int `xml:"shippingId"`
 	AddressHandling int `xml:"isStandard"`
-	UpgradeID       int `xml:"upgradeId"`
+	UpgradeID       int `xml:"upgradeId,omitempty"`
 	PaymentID       int `xml:"paymentId"`
 	UploadInfo      UploadInfo
-	ResellerPrice   string `xml:"resellerGross"`
-	Width           string `xml:"width"`
-	Height          string `xml:"height"`
+	ResellerPrice   string `xml:"resellerGross,omitempty"`
+	Width           string `xml:"width,omitempty"`
+	Height          string `xml:"height,omitempty"`
 }
 
 type Options map[int]int
@@ -100,7 +100,7 @@ func (c *Client) AddProductToCart(PGroupID int) []byte {
 
 // SendOrder sends a fully configured order
 func (c *Client) SendOrder(order Order) []byte {
-	r, _ := c.call("sendFullOrder", &requestAddProductToCart{})
+	r, _ := c.call("sendFullOrder", &order)
 
 	return r
 }
