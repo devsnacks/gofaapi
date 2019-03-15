@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/devsnacks/gofaapi.svg?style=svg)](https://circleci.com/gh/devsnacks/gofaapi)
+
 # gofaapi
 
 FLYERALARM Reseller API library for golang
