@@ -121,3 +121,35 @@ func (m Options) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 
 	return e.EncodeToken(start.End())
 }
+
+func (m UploadInfo) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
+
+	start.Name = xml.Name{Space: "", Local: "uploadData"}
+	start.Attr = []xml.Attr{xml.Attr{Name: xml.Name{Local: "xsi:type"}, Value: "ns2:Map"}}
+
+	e.EncodeToken(start)
+
+	item := xml.StartElement{Name: xml.Name{Local: "item"}}
+
+	e.EncodeToken(item)
+	e.EncodeElement("dataTransferType", xml.StartElement{Name: xml.Name{Local: "key"}})
+	e.EncodeElement(m.UploadType, xml.StartElement{Name: xml.Name{Local: "value"}})
+	e.EncodeToken(item.End())
+
+	e.EncodeToken(item)
+	e.EncodeElement("dataTransferTime", xml.StartElement{Name: xml.Name{Local: "key"}})
+	e.EncodeElement(m.Time, xml.StartElement{Name: xml.Name{Local: "value"}})
+	e.EncodeToken(item.End())
+
+	e.EncodeToken(item)
+	e.EncodeElement("dataTransferText", xml.StartElement{Name: xml.Name{Local: "key"}})
+	e.EncodeElement(m.Text, xml.StartElement{Name: xml.Name{Local: "value"}})
+	e.EncodeToken(item.End())
+
+	e.EncodeToken(item)
+	e.EncodeElement("referenceText", xml.StartElement{Name: xml.Name{Local: "key"}})
+	e.EncodeElement(m.Text, xml.StartElement{Name: xml.Name{Local: "value"}})
+	e.EncodeToken(item.End())
+
+	return e.EncodeToken(start.End())
+}

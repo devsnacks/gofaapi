@@ -62,3 +62,33 @@ func TestAddressMarshalling(t *testing.T) {
 		t.Error("XMLs are not equal!")
 	}
 }
+
+func TestOptionMarshalling(t *testing.T) {
+	options := make(Options)
+	options[100] = 1
+	options[300] = 40
+	options[430] = 123
+
+	f, _ := ioutil.ReadFile("testdata/options.xml")
+
+	actualXML, _ := xml.MarshalIndent(options, "", "   ")
+
+	if string(actualXML) != string(f) {
+		t.Error("XMLs are not equal!")
+	}
+}
+
+func TestUploadInfoMashalling(t *testing.T) {
+	uploadinfo := UploadInfo{UploadType: "upload",
+		Time:          "01.03.2019 00:10:11",
+		Text:          "Upload via Api.",
+		ReferenceText: "Upload Reference 1"}
+
+	f, _ := ioutil.ReadFile("testdata/uploadinfo.xml")
+
+	actualXML, _ := xml.MarshalIndent(uploadinfo, "", "   ")
+
+	if string(actualXML) != string(f) {
+		t.Error("XMLs are not equal!")
+	}
+}

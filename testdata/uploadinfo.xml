@@ -1,0 +1,18 @@
+<uploadData xsi:type="ns2:Map">
+   <item>
+      <key>dataTransferType</key>
+      <value>upload</value>
+   </item>
+   <item>
+      <key>dataTransferTime</key>
+      <value>01.03.2019 00:10:11</value>
+   </item>
+   <item>
+      <key>dataTransferText</key>
+      <value>Upload via Api.</value>
+   </item>
+   <item>
+      <key>referenceText</key>
+      <value>Upload via Api.</value>
+   </item>
+</uploadData>
